@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, Linking, Alert, TouchableOpacity } from 'react-native'
+import { View, Text, Image, Linking, Alert, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import Header from '../../compunent/header/Header'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';

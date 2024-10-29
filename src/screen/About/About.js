@@ -1,10 +1,11 @@
 import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
 import Header from '../../compunent/header/Header'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const About = () => {
     return (
-        <View
+        <SafeAreaView
             className="flex-1  pt-1 bg-white"
         >
             <Header ret={true} showlogo={false} text={"About Us"} />
@@ -43,7 +44,7 @@ const About = () => {
                     className="px-5 mt-2 mb-10"
                 >La Société (appelée « la Société », « Nous », « Notre » ou « Nos » dans le présent Contrat) fait référence à tawssilat, M497+F7V, Cite El Maredja, Baraki.</Text>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

@@ -4,6 +4,7 @@ import SelfLog from './SelfLog/SelfLog'
 import Toast from 'react-native-toast-message'
 import LogWith from './antherLog/LogWith'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Login = () => {
     const naviagtion = useNavigation()
@@ -16,7 +17,7 @@ const Login = () => {
         });
     };
     return (
-        <View
+        <SafeAreaView
             className="flex-1"
         >
             <Toast />
@@ -38,7 +39,7 @@ const Login = () => {
                     className="text-[#FC6011]"
                 >S'inscrire</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 

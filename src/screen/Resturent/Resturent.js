@@ -9,6 +9,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import MyHelp from '../../constanst/HelpAbout'
 import { clear, getreide } from '../../stor/StorCart'
 import Loading from '../../compunent/laoding/Loading'
+import { SafeAreaView } from 'react-native-safe-area-context'
 const Resturent = () => {
     const dispatch = useDispatch()
     const card = useSelector(state => state.StorCard)
@@ -33,14 +34,19 @@ const Resturent = () => {
     const { price } = MyHelp(card.location, rest)
     return (
         <>
-            <ScrollView
-                className=" min-h-screen"
+            <SafeAreaView
+                className="flex-1"
             >
-                <RssturentInpho rest={rest} location={card.location} />
-                <ResturantFood rest={rest} price={price} location={card.location} />
+
+                <ScrollView
+                    className=" min-h-screen bg-white"
+                >
+                    <RssturentInpho rest={rest} location={card.location} />
+                    <ResturantFood rest={rest} price={price} location={card.location} />
 
 
-            </ScrollView>
+                </ScrollView>
+            </SafeAreaView>
             {card.card.length > 0 && rest._id === card.resourstorId && <TouchableOpacity
                 className="bg-[#fc6011] z-[500] absolute w-full bottom-2 py-2 px-5 flex flex-row justify-between items-center"
                 onPress={() => {

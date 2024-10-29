@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Thanks = () => {
     const navigation = useNavigation()
@@ -8,7 +9,7 @@ const Thanks = () => {
     console.log(route.id);
 
     return (
-        <View
+        <SafeAreaView
             className="flex-1  bg-white"
         >
             <Image
@@ -47,7 +48,7 @@ const Thanks = () => {
                     className="text-black text-xl mt-3 font-bold"
                 >Retour à la page d'accueil</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 

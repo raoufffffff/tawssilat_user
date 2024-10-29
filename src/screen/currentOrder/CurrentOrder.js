@@ -4,6 +4,7 @@ import Header from '../../compunent/header/Header'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import axios from 'axios'
 import Loading from '../../compunent/laoding/Loading'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const CurrentOrder = () => {
     const navigation = useNavigation()
@@ -90,14 +91,20 @@ const CurrentOrder = () => {
         </TouchableOpacity>
     })
     return (
-        <View
-            className="flex-1 pt-4"
+        <SafeAreaView
+            className="flex-1 pt-4 bg-white"
         >
             <Header ret={true} showlogo={true} text={"Commande actuelle"} />
             <ScrollView>
-                {mycurrentorder}
+                {orders.filter(e => !e.cancel && !e.complate)
+                    ? mycurrentorder :
+                    <Text
+                        className="mx-auto mt-10 capitalize text-2xl text-[#777]"
+                    >aucun commentaire</Text>
+                }
+
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

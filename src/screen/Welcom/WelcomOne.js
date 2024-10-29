@@ -1,6 +1,7 @@
 import { View, Text, Image, TouchableOpacity, Alert, BackHandler } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 
 const WelcomOne = () => {
@@ -27,7 +28,7 @@ const WelcomOne = () => {
         return () => backHandler.remove();
     }, []);
     return (
-        <View
+        <SafeAreaView
             className="flex-1"
         >
             <Image
@@ -51,7 +52,7 @@ const WelcomOne = () => {
                     className="text-white mx-auto text-lg "
                 >Suivant</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 

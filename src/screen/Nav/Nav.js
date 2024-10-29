@@ -6,6 +6,7 @@ import navlinks from '../../constanst/navlinks'
 import { useNavigation } from '@react-navigation/native'
 import Entypo from '@expo/vector-icons/Entypo';
 import Loading from '../../compunent/laoding/Loading'
+import { SafeAreaView } from 'react-native-safe-area-context'
 const Nav = () => {
     const [user, setuser] = useState(null)
     const navigation = useNavigation()
@@ -42,7 +43,7 @@ const Nav = () => {
         return <Loading />
     }
     return (
-        <View
+        <SafeAreaView
             className="flex-1  bg-white pt-5"
         >
             <Header showlogo={false} ret={true} />
@@ -74,7 +75,7 @@ const Nav = () => {
                 className="text-sm mx-auto text-[#777] mt-3"
             >Tawssilatcompany@gmail.com
             </Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

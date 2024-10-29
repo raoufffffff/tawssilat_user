@@ -28,7 +28,7 @@ const StoreCard = createSlice({
             state.location = payload
         },
         remove: (state, { payload }) => {
-            state.card = state.card.filter(e => e.name !== payload.name);
+            state.card = state.card.filter(e => e.id != payload);
         },
         clear: (state) => {
             state.card = [];

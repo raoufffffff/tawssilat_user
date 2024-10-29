@@ -30,6 +30,7 @@ import MenuType from '../screen/menuType/MenuType'
 import CurrentOrder from '../screen/currentOrder/CurrentOrder'
 import Personnelles from '../screen/personnelles/Personnelles'
 import Locations from '../screen/Location/Location'
+import Singel from '../screen/RealPages/Singel'
 
 const Stuck = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -42,8 +43,16 @@ const HomePages = () => {
             }}
         >
             <Stuck.Screen name='mainPage' component={Home} />
-            <Stuck.Screen name='resturent' component={Resturent} />
-            <Stuck.Screen name='food' component={Food} />
+            <Stuck.Screen
+                options={{
+                    presentation: "containedModal"
+                }}
+                name='resturent' component={Resturent} />
+            <Stuck.Screen
+                options={{
+                    presentation: "modal"
+                }}
+                name='food' component={Food} />
         </Stuck.Navigator>
     )
 }
@@ -72,6 +81,7 @@ const HomeTabs = () => {
                     borderTopColor: "#FC6011",
                     borderLeftColor: "#FC6011",
                     borderRightColor: "#FC6011",
+                    borderBottomColor: "transparent",
                     borderTopEndRadius: 30,
                     borderTopStartRadius: 30,
                     padding: 0
@@ -208,6 +218,7 @@ const Navigation = () => {
                 <Stuck.Screen name='thanks' component={Thanks} />
                 <Stuck.Screen name='truck' component={Truck} />
                 <Stuck.Screen name='currentorder' component={CurrentOrder} />
+                <Stuck.Screen name='singel' component={Singel} />
 
             </Stuck.Navigator>
         </NavigationContainer>

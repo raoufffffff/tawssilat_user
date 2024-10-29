@@ -6,6 +6,7 @@ import Loading from '../../compunent/laoding/Loading';
 import ResturentCard from '../../compunent/ResturentHome/ResturentCard';
 import Header from '../../compunent/header/Header';
 import FoodCard from '../../compunent/foodCrad/FoodCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Favorite = () => {
     const [loading, setLoading] = useState(true);
@@ -78,7 +79,7 @@ const Favorite = () => {
         return <FoodCard food={e} key={e._id} />
     })
     return (
-        <View
+        <SafeAreaView
             className="flex-1 pt-4 w-full bg-white"
         >
             <Header ret={false} showlogo={true} />
@@ -110,7 +111,7 @@ const Favorite = () => {
             </ScrollView>
 
 
-        </View>
+        </SafeAreaView>
     )
 }
 

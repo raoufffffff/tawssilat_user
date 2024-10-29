@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import ResturantSearch from '../Resturentsearch/ResturantSearch'
 import axios from 'axios'
@@ -12,12 +12,17 @@ const ResturantFood = ({ rest, price }) => {
         setSearch(a)
     }
     const myTabs = rest.menu.map(e => {
-        return <Text
+        return <TouchableOpacity
             className={`${Type == e ? "text-white bg-[#FC6011]" :
                 "border border-[#777a]  "} px-3 py-1 rounded-xl mx-2`}
             onPress={() => setType(e)}
             key={e}
-        >{e}</Text>
+        >
+            <Text
+                className={`${Type == e && "text-white"}`}
+
+            >{e}</Text>
+        </TouchableOpacity>
     })
     useEffect(() => {
         const getMyfood = async () => {
@@ -53,10 +58,17 @@ const ResturantFood = ({ rest, price }) => {
                 horizontal
                 showsHorizontalScrollIndicator={false}
             >
-                <Text
-                    className={`${Type === "All Item" ? "text-white bg-[#FC6011]" : "border border-[#777a] text-[#FC6011"} px-3 py-1 rounded-xl mx-2`}
+                <TouchableOpacity
+                    className={`${Type == "All Item" ? "text-white bg-[#FC6011]" :
+                        "border border-[#777a]  "} px-3 py-1 rounded-xl mx-2 border border-[#777a] text-[#FC6011"} px-3 py-1 rounded-xl mx-2`}
                     onPress={() => setType("All Item")}
-                >Tout article</Text>
+                >
+
+                    <Text
+                        className={`${Type === "All Item" && "text-white bg-[#FC6011]"} `}
+                        onPress={() => setType("All Item")}
+                    >Tout article</Text>
+                </TouchableOpacity>
                 {myTabs}</ScrollView>
             <View
                 className="mt-7 pb-16"

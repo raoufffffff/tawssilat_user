@@ -5,6 +5,7 @@ import Header from '../../compunent/header/Header';
 import ResturentCard from '../../compunent/ResturentHome/ResturentCard';
 import FoodCard from '../../compunent/foodCrad/FoodCard';
 import Loading from '../../compunent/laoding/Loading';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Search = () => {
     const [loading, setLoading] = useState(true);
@@ -98,7 +99,7 @@ const Search = () => {
     );
 
     return (
-        <View className="bg-white flex-1 pt-4">
+        <SafeAreaView className="bg-white flex-1 pt-4">
             <Header ret={false} showlogo={true} />
             <TextInput
                 value={search}
@@ -129,7 +130,7 @@ const Search = () => {
                 onEndReachedThreshold={0.5} // Trigger when 50% away from end
                 ListFooterComponent={loading && <Loading />} // Show loading indicator when loading more
             />
-        </View>
+        </SafeAreaView>
     );
 };
 

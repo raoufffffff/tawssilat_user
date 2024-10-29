@@ -27,9 +27,9 @@ const FoodCard = ({ food, price }) => {
                 className="absolute top-0 left-0 w-5/12 overflow-hidden"
             >
                 <Image
-                    source={require('../../../assets/adds-3.jpeg')}
-                    className="w-full"
-                    resizeMode='cover'
+                    source={require('../../../assets/p-s.jpg')}
+                    className="w-full h-32"
+                    resizeMode='center'
                 />
             </View>
             <View className="px-2 py-2 w-7/12">

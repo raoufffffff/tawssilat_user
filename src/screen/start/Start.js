@@ -2,6 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { SafeAreaView } from 'react-native'
 
 
 const Start = () => {
@@ -26,7 +27,7 @@ const Start = () => {
 
 
     return (
-        <View
+        <SafeAreaView
             className="flex-1"
         >
             <Image
@@ -56,7 +57,7 @@ const Start = () => {
                     Créer un compte
                 </Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 

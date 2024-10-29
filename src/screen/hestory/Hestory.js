@@ -5,6 +5,7 @@ import axios from 'axios'
 import Loading from '../../compunent/laoding/Loading'
 import Header from '../../compunent/header/Header'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Hestory = () => {
     const navigation = useNavigation()
@@ -106,14 +107,14 @@ const Hestory = () => {
         </TouchableOpacity>
     })
     return (
-        <View
+        <SafeAreaView
             className="flex-1 pt-4"
         >
             <Header ret={true} showlogo={true} text={"histoire"} />
             <ScrollView>
                 {mycurrentorder}
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

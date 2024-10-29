@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-
-const Header = ({ ret, showlogo, text }) => {
+import Animated, { FadeInUp } from 'react-native-reanimated'
+const Header = ({ ret, showlogo, text, p }) => {
     const navigation = useNavigation()
     const [orders, setorders] = useState([])
     const [loading, setLoading] = useState(true);
@@ -47,7 +47,8 @@ const Header = ({ ret, showlogo, text }) => {
         return () => clearTimeout(refrshing); // Proper cleanup
     }, [refrsh]); // Dependency array
     return (
-        <View
+        <Animated.View
+            entering={FadeInUp.delay(p ? 100 : 300).springify().damping()}
             className={` w-full flex flex-row px-3   justify-between  items-center mb-2`}
         >
             {ret ?
@@ -86,17 +87,17 @@ const Header = ({ ret, showlogo, text }) => {
                 onPress={() => {
                     navigation.navigate('nav')
                 }}
+                className="rounded-full bg-[#fc6011] flex px-4 py-2"
             >
-                {/* <Image
-                    source={require('../../assets/logo.png')}
-                    className="h-16 w-16"
-                /> */}
-                {user && <Text
-                    className="text-2xl bg-[#fc6011] text-white rounded-full px-4 py-2"
-                >{user.name[0]}</Text>}
+                {user &&
+                    <Text
+                        className="text-2xl  text-white   rounded-xl "
 
+                    >{user.name[0]}</Text>
+
+                }
             </TouchableOpacity>}
-        </View>
+        </Animated.View>
     )
 }
 

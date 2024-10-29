@@ -14,7 +14,7 @@ const RssturentInpho = ({ location, rest }) => {
         >
             <Header ret={true} showlogo={true} />
             <View
-                className="w-10/12 mx-auto bg-[#eee] pb-5 mt-14 rounded-xl relative"
+                className="w-11/12 mx-auto bg-[#fff] border-[#eee] border pb-5 mt-14 rounded-xl relative"
             >
                 <Fav resId={rest._id} />
                 <Text

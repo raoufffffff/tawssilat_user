@@ -1,11 +1,12 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const WelcomThree = () => {
     const navigation = useNavigation()
     return (
-        <View
+        <SafeAreaView
             className="flex-1"
         >
             <Image
@@ -35,7 +36,7 @@ const WelcomThree = () => {
                     className="text-white mx-auto text-lg "
                 >Suivant</Text>
             </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }
 

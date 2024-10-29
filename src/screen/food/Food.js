@@ -146,11 +146,11 @@ const Food = () => {
                                     id: food.by,
                                 })
                             }}
-                            className="bg-[#fc6011] flex flex-row mt-3 w-7/12 justify-between px-3 rounded-xl py-1 mx-auto"
+                            className="bg-[#fc6011] flex flex-row mt-3  items-center justify-between px-3 rounded-xl py-1 mx-auto"
                         >
                             <Fontisto name="shopping-basket-add" size={24} color="#fff" />
                             <Text
-                                className="font-bold text-white"
+                                className="font-bold mx-2 text-white"
                             >Ajouter à la panier</Text>
                         </TouchableOpacity>
                         <TouchableOpacity

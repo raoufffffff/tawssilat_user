@@ -8,6 +8,7 @@ import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Fontisto from '@expo/vector-icons/Fontisto';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import AreYouSure from './AreYouSure'
+import { SafeAreaView } from 'react-native-safe-area-context'
 const Truck = () => {
     const navigation = useNavigation()
     const route = useRoute().params
@@ -135,7 +136,7 @@ const Truck = () => {
         </View>
     })
     if (order.cancel) {
-        return <View
+        return <SafeAreaView
             className="flex-1 pt-4"
         >
             <Header ret={true} text={"traking"} showlogo={true} />
@@ -151,7 +152,7 @@ const Truck = () => {
                     className="text-red-500 font-bold text-xl"
                 >cette commande a été annulée</Text>
             </View>
-        </View>
+        </SafeAreaView>
     }
 
     const cancelOrder = async () => {
@@ -170,7 +171,7 @@ const Truck = () => {
         setAreYouSure(false)
     }
     return (
-        <View
+        <SafeAreaView
             className="flex-1 pt-4 "
         >
             <Header ret={true} text={"suivi"} showlogo={true} />
@@ -216,7 +217,7 @@ const Truck = () => {
                     }
                 </View>
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

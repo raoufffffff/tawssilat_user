@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import Header from '../../compunent/header/Header'
 import Entypo from '@expo/vector-icons/Entypo';
 import Feather from '@expo/vector-icons/Feather';
-import { newPrice, remove } from '../../stor/StorCart'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Confirm from './Confirm'
 import NotOpen from './NotOpen'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { remove } from '../../stor/StorCart'
 const Card = () => {
     const navigation = useNavigation()
     const [user, setuser] = useState(null)
@@ -142,7 +143,7 @@ const Card = () => {
 
 
     return (
-        <View
+        <SafeAreaView
             className="flex-1 relative"
         >
             {notopen && <NotOpen about={!rest.open ? "Le restaurant est fermé, veuillez commander auprès d'un autre restaurant." : "Le restaurant ne livre pas dans votre région, veuillez commander auprès d'un autre restaurant."} />}
@@ -225,7 +226,7 @@ const Card = () => {
                 >Confirmation</Text>
             </TouchableOpacity>}
             {confirm && <Confirm order={order} cancel={cancel} />}
-        </View>
+        </SafeAreaView>
     )
 }
 

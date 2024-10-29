@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, Text } from 'react-native'
+import { ScrollView, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Top from '../../compunent/top/Top'
@@ -6,6 +6,8 @@ import Header from '../../compunent/header/Header'
 import Search from '../../compunent/Search/Search'
 import Adds from '../../compunent/Adds/Adds'
 import ResturentHome from '../../compunent/ResturentHome/ResturentHome'
+import Real from '../../compunent/reals/Real'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Home = () => {
     const [user, setUser] = useState({})
@@ -36,7 +38,7 @@ const Home = () => {
 
     return (
         <SafeAreaView className={`flex-1 bg-white  ${scrollY > 80 && "pt-3"}`}>
-            {scrollY > 80 && <Header p={true} ret={false} showlogo={true} />
+            {scrollY > 150 && <Header p={true} ret={false} showlogo={true} />
             }
             <ScrollView
                 onScroll={handleScroll}
@@ -50,7 +52,7 @@ const Home = () => {
                     <Text className="text-xl px-3 font-semibold mt-3">Offres que vous pourriez aimer</Text>
                     <Adds />
                     <Text className="text-2xl px-3 font-semibold my-3">Restaurants populaires</Text>
-
+                    <Real />
                     <ResturentHome />
                 </ScrollView>
 

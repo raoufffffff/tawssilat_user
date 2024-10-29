@@ -6,6 +6,7 @@ import Loading from '../../compunent/laoding/Loading'
 import axios from 'axios'
 import { useNavigation } from '@react-navigation/native'
 import Toast from 'react-native-toast-message'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Personnelles = () => {
     const [user, setuser] = useState(null)
@@ -59,7 +60,7 @@ const Personnelles = () => {
         }
     }
     return (
-        <View
+        <SafeAreaView
             className="flex-1 pt-4"
         >
             <Toast />
@@ -113,7 +114,7 @@ const Personnelles = () => {
                 </View>
 
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
